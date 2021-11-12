@@ -4,7 +4,7 @@ class Admin::CategoriesController < ApplicationController
   password: ENV["ADMIN_PASSWORD"]
 
   def index
-    @categories = Category.order(id: :desc).all
+    @category = Category.order(id: :desc).all
   end
 
   def new
@@ -25,7 +25,9 @@ class Admin::CategoriesController < ApplicationController
 
    def category_params
      params.require(:category).permit(
-       :name
+      :name
+      # :updated_at,
+      # :created_at
      )
    end
 
