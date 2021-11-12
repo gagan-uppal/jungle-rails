@@ -4,7 +4,7 @@ class Admin::CategoriesController < ApplicationController
   password: ENV["ADMIN_PASSWORD"]
 
   def index
-    @category = Category.order(id: :desc).all
+    @categories = Category.order(id: :desc).all
   end
 
   def new
